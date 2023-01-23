@@ -14,6 +14,8 @@ $(document).ready(function () {
             }
         });
         $.post("http://localhost:8888", {"options": body} )
+        .done(function(data) { console.log(data) })
+        
     }
 
     const form = document.querySelector('form');
