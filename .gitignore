@@ -1,0 +1,7 @@
+*.pyc
+*.log
+.venv/
+tmp/
+pyproject.toml
+*.cfg
+!*_example.cfg
