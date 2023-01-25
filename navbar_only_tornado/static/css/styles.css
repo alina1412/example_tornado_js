@@ -1,0 +1,17 @@
+a {
+    color: rgb(56, 56, 51);
+}
+
+.navbar-nav {
+    width: 100%;
+    text-align: left;
+}
+
+.navbar-nav>li {
+    float: none;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+}
