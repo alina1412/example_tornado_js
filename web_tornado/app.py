@@ -6,33 +6,38 @@ import json
 
 class BaseHandler(web.RequestHandler):
     def initialize(self):
-        self.session_id = None
+        self.name = "World"
 
 
-class MainHandler(BaseHandler):
+class HelloHandler(BaseHandler):
     def get(self):
-        self.write(f"Hello, {self.session_id }")
+        self.write(f"Hello, {self.name }")
 
 
 class MyFormHandler(web.RequestHandler):
     def get(self):
+        print("MyFormHandler - get")
         self.render("./static/index.html")
 
     def post(self):
         self.set_header("Content-Type", "text/plain")
-        print("here")
-        data = json.loads(self.get_argument("options", ""))
+        print("MyFormHandler - post")
+        data = self.request.body
+        try:
+            data = json.loads(data)
+            self.write("You wrote " + json.dumps(data))
+        except json.JSONDecodeError:
+            print("JSONDecodeError")
         print(data)
-        self.write("You wrote " + json.dumps(data))
+        # self.redirect("/")
 
 
 settings = {
     "static_path": os.path.join(
         os.path.dirname(__file__), "static"
-    ),  # "web_tornado/static", #
+    ),  # "web_tornado/static"
     "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
     "login_url": "/login",
-    # "xsrf_cookies": True,
 }
 
 
@@ -41,7 +46,7 @@ def make_app():
 
     return web.Application(
         [
-            (r"/main", MainHandler),
+            (r"/hello", HelloHandler),
             (r"/", MyFormHandler),
         ],
         **settings,
