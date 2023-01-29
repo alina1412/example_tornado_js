@@ -4,14 +4,9 @@ import os
 import json
 
 
-class BaseHandler(web.RequestHandler):
-    def initialize(self):
-        self.name = "World"
-
-
-class HelloHandler(BaseHandler):
+class HelloHandler(web.RequestHandler):
     def get(self):
-        self.write(f"Hello, {self.name }")
+        self.write("Hello, World")
 
 
 class MyFormHandler(web.RequestHandler):
@@ -37,7 +32,6 @@ settings = {
         os.path.dirname(__file__), "static"
     ),  # "web_tornado/static"
     "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
-    "login_url": "/login",
 }
 
 
