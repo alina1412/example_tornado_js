@@ -5,3 +5,4 @@ tmp/
 pyproject.toml
 *.cfg
 !*_example.cfg
+poetry.lock
