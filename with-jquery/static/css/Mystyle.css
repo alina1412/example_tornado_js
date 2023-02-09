@@ -1,0 +1,12 @@
+.myAlert {
+    background-color: aquamarine;
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    right: 150px;
+    top: 180px;
+    display: none;
+    
+    opacity: 0;
+}
+
