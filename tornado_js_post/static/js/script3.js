@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
     function handleSubmit(event) {
         // event.preventDefault();
         // const data = new FormData(event.target);
@@ -28,8 +28,6 @@ $(document).ready(function () {
                 console.log(data)
             });
         console.log('posted');
-
-        showAlert();
         return true;
     }
 
@@ -43,21 +41,3 @@ $(document).ready(function () {
     });
 
 })
-
-
-var returnAlert = async function () {
-    await sleep(1000);
-    $("#success-alert").hide();
-    $("#success-alert").animate({
-        opacity: 0,
-        top: "+=120"
-    }, 1);
-}
-// Показ alerta "Сохранено" с анимацией и возврат returnAlert на место
-var showAlert = async function () {
-    $("#success-alert").show();
-    $("#success-alert").animate({
-        opacity: 1,
-        top: "-=120"
-    }, 2100, returnAlert);
-}
