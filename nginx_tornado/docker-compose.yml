@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+
+  web:
+    container_name: web5
+    image: web5
+    build: ./web5
+    # restart: always
+    volumes:
+      - ./web5:/usr/share/nginx/html:ro
+      - ./web5/img:/images/
+    ports:
+      - 80:80
