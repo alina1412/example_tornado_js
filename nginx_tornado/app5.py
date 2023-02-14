@@ -8,6 +8,10 @@ class ImgHandler(web.RequestHandler):
         """shows an img on html page"""
         self.render("./static/index5.html")
 
+class THandler(web.RequestHandler):
+    def get(self):
+        self.write("tttt")
+
 
 settings = {
     "static_path": os.path.join(
@@ -23,6 +27,7 @@ def make_app():
     return web.Application(
         [
             (r"/get", ImgHandler),
+            (r"/", THandler),
         ],
         **settings,
     )
