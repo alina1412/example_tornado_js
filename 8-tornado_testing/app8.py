@@ -1,6 +1,9 @@
 import asyncio
-from tornado import web
 import json
+
+from tornado import web
+
+from for_test import function2_for_test, async_function_for_test
 
 
 def function_for_test():
@@ -21,6 +24,15 @@ class MainHandler(web.RequestHandler):
         self.write(json.dumps({"res": function_for_test()}))
 
 
+class MoreForMock(web.RequestHandler):
+    def get(self):
+        self.write(json.dumps({"res": function2_for_test()}))
+
+    async def put(self):
+        ans = json.dumps({"res": await async_function_for_test()})
+        self.write(ans)
+
+
 settings = {"cookie_secret": "jhvkv.kjb;bkucthtxgrx"}
 
 
@@ -28,6 +40,7 @@ def make_app():
     return web.Application(
         [
             (r"/", MainHandler),
+            ("/m", MoreForMock)
         ],
         **settings,
     )
