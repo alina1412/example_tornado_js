@@ -58,6 +58,20 @@ class ApiTestCase(AsyncHTTPTestCase):
         response = yield client.fetch(self.get_url('/m'), body="", method="PUT")
         assert response.body == b'{"res": true}'
 
+    @gen_test
+    async def test_var_mock(self):
+        """with await"""
+        client = AsyncHTTPClient()
+        response = await client.fetch(
+            self.get_url('/m'), 
+            method="POST",
+            body="",
+            follow_redirects=True,
+            headers= {"Content-Type": 'application/json; charset=UTF-8', 
+                      'Cookie': '='.join(('cookie_secret', 'b8b7b66d7e3e406eb404cd7c7e4e3eaf'))}
+        )
+        assert response.body == b'{"res": "abc"}'
+
 
 if __name__ == "__main__":
     unittest.main()

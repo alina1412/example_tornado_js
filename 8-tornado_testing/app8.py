@@ -32,6 +32,11 @@ class MoreForMock(web.RequestHandler):
         ans = json.dumps({"res": await async_function_for_test()})
         self.write(ans)
 
+    async def post(self):
+        letters = "abc"
+        ans = json.dumps({"res": letters})
+        return self.write(ans)
+
 
 settings = {"cookie_secret": "jhvkv.kjb;bkucthtxgrx"}
 
