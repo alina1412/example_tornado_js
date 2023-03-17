@@ -1,4 +1,5 @@
 # Several examples of simple tornado templates
+Educational tornado web applications.
 
 Learn how:
 - A tornado handler connected to index.html.
@@ -13,3 +14,22 @@ Each example in separate folder include: html, js, app.py
 - create virtual environment (if you wish)
 - install `tornado` dependency
 - run one of app.py
+
+
+## Each app
+1) Simple tornado application with get and post handlers. Render html page with tornado. Input form in tornado web.
+
+2) How to make navbar in html, responsive bootstrap navbar.
+
+3) Example of tornado web page with submit form and jquery submit script. How to make jquery post request.
+
+4) How to make an alert with js and jquery after the submit. Success flying alert. Example of tornado web app with a submit form and an alert.
+
+5) Example of simple nginx configuration, nginx in docker. Using nginx for showing an image on the web page.
+
+6) Html draft with bootstrap containers, draft of the tornado web app with full-page html example.
+
+7) Example of an autocomplete usage in html with js and jquery. Suggestion of fixed variants for the autocomplete. Getting a data from a user and processing it in the tornado web app. 
+
+8) Example of testing tornado handlers. Get and post handlers. Pytest for tornado application. Mocking functions for testing a tornado app.
+
