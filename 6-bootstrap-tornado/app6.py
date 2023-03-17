@@ -1,3 +1,5 @@
+"""Html draft with bootstrap containers, 
+draft of tornado web app with full-page html example."""
 import asyncio
 from tornado import web
 import os
