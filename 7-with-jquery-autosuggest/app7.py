@@ -1,3 +1,6 @@
+"""Example of autocomplete usage in html with js and jquery. (script7.js)
+Suggestion of a fixed variants for autocomplete.
+Getting data from user and processing it in tornado web app."""
 import asyncio
 from tornado import web, autoreload
 import os
