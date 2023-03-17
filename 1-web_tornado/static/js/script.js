@@ -11,10 +11,10 @@ $(document).ready(function () {
                 "inner_key": 1
             }
         });
-        $.post("http://localhost:8888", body )
+        $.post("/", body )
         .done(function(data) { console.log(data) })
         return true;
     }
 
-    document.querySelector('form').addEventListener('submit', handleSubmit);
+    $('form').on('submit', handleSubmit);
 })

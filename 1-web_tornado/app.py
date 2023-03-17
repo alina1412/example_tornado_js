@@ -1,3 +1,6 @@
+"""Simple tornado application with get and post handlers.
+Render html page with tornado. Input form in tornado web.
+Usage of jquery for post"""
 import asyncio
 from tornado import web
 import os
@@ -11,12 +14,12 @@ class HelloHandler(web.RequestHandler):
 
 class MyFormHandler(web.RequestHandler):
     def get(self):
-        print("MyFormHandler - get")
+        # print("MyFormHandler - get")
         self.render("./static/index.html")
 
     def post(self):
+        # print("MyFormHandler - post")
         self.set_header("Content-Type", "text/plain")
-        print("MyFormHandler - post")
         data = self.request.body
         try:
             data = json.loads(data)
@@ -30,8 +33,7 @@ class MyFormHandler(web.RequestHandler):
 settings = {
     "static_path": os.path.join(
         os.path.dirname(__file__), "static"
-    ),  # "web_tornado/static"
-    "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
+    ), 
 }
 
 
