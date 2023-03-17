@@ -1,3 +1,5 @@
+"""How to make an alert with js and jquery after the submit.
+Success flying alert. Example of tornado web app with a submit form and an alert."""
 import asyncio
 from tornado import web, autoreload
 import os
@@ -6,14 +8,14 @@ import json
 
 class MainHandler(web.RequestHandler):
     def get(self):
-        print("get /main/")
+        # print("get /main/")
         self.render("./static/index4.html")
 
 
 class MyFormHandler(web.RequestHandler):
     def post(self):
+        # print("post /form/")
         self.set_header("Content-Type", "text/plain")
-        print("post /form/")
         data = json.loads(self.request.body)
         print(data)
         self.write("You wrote " + json.dumps(data))
@@ -22,9 +24,7 @@ class MyFormHandler(web.RequestHandler):
 settings = {
     "static_path": os.path.join(
         os.path.dirname(__file__), "static"
-    ), 
-    "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
-    "login_url": "/login"
+    )
 }
 
 
