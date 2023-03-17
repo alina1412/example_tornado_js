@@ -1,10 +1,13 @@
+"""Simple example of tornado web app.
+How to make navbar in html, responsive bootstrap navbar."""
 import asyncio
 from tornado import web
 import os
 
 
-class MyFormHandler(web.RequestHandler):
+class MainHandler(web.RequestHandler):
     def get(self):
+        """Shows a navbar draft"""
         self.render("./static/index2.html")
 
 
@@ -18,7 +21,7 @@ def make_app():
 
     return web.Application(
         [
-            (r"/", MyFormHandler),
+            (r"/", MainHandler),
         ],
         **settings,
     )
