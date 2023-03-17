@@ -1,9 +1,7 @@
 $(document).ready(function () {
     
     function handleSubmit(event) {
-        // event.preventDefault();
         // const data = new FormData(event.target);
-        // const message = data.get('message');
         const message = $('#message').val()
 
         console.log("here1");
@@ -13,9 +11,7 @@ $(document).ready(function () {
         console.log("here3");
 
 
-
         if (!message) {
-            // event.preventDefault();
             console.log("no value");
             return false;
         }
@@ -23,7 +19,7 @@ $(document).ready(function () {
         let body = JSON.stringify({
             "message": message
         });
-        $.post("http://localhost:8888/form/", body)
+        $.post("/form/", body)
             .done(function (data) {
                 console.log(data)
             });

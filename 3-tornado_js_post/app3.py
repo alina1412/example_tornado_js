@@ -1,3 +1,5 @@
+"""Example of tornado web page with submit form
+and jquery submit script. How to make jquery post request."""
 import asyncio
 from tornado import web
 import os
