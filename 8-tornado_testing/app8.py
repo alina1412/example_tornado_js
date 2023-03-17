@@ -1,3 +1,6 @@
+"""Example of testing tornado handlers. Get and post handlers.
+Pytest for tornado application. Mocking functions for testing a tornado app."""
+
 import asyncio
 import json
 
