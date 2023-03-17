@@ -1,3 +1,6 @@
+"""Example of simple nginx configuration, 
+nginx in docker. Using nginx for showing image on the web page.
+"""
 import asyncio
 from tornado import web
 import os
@@ -5,7 +8,7 @@ import os
 
 class ImgHandler(web.RequestHandler):
     def get(self):
-        """shows an img on html page"""
+        """shows an img on html page if nginx is running"""
         self.render("./static/index5.html")
 
 class THandler(web.RequestHandler):
@@ -26,8 +29,8 @@ def make_app():
 
     return web.Application(
         [
-            (r"/get", ImgHandler),
-            (r"/", THandler),
+            (r"/", ImgHandler),
+            (r"/t", THandler),
         ],
         **settings,
     )
