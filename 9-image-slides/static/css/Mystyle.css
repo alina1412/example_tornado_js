@@ -1,44 +1,53 @@
+.img-container2 {
+  width: 700px;
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+
 
 .slideshow-container {
-    max-width: 200px;
-    position: relative;
-    margin: auto;
-    /* width:40%;  */
-    height: 100px;
-  }
-  
-  .slick-arrow {
-    position: absolute;
-    background-color: gray;
-  }
-  
-  .slick-arrow:link, .slick-arrow:hover, .slick-arrow:visited, .slick-arrow:active .slick-arrow:hover::after{
-    background-color: gray;
-  }
-  
-  .imgSlide {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height:100px;
-  }
-  
-  
-  
-  #cboxClose {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-    border-radius: 6px;
-    border: none;
-  
-    background: #6E6D70;
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
-    color: #DFDEDF;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
+  max-width: 200px;
+  position: relative;
+  margin: auto;
+  /* width:40%;  */
+  height: 100px;
+}
+
+.slick-arrow {
+  position: absolute;
+  background-color: gray;
+}
+
+.slick-arrow:link,
+.slick-arrow:hover,
+.slick-arrow:visited,
+.slick-arrow:active .slick-arrow:hover::after {
+  background-color: gray;
+}
+
+.imgSlide {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+}
+
+
+
+#cboxClose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  background: #6E6D70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}

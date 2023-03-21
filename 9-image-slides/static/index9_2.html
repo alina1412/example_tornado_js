@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('zoomifyc/zoomifyc.min.css') }} " />
+    <link rel="stylesheet" href="{{ static_url('css/Mystyle.css') }}">
+</head>
+
+<body>
+
+    <div class="img-container2">
+        {% for slide in slides %}
+        <img class="imgSlide" src="{{ static_url(slide['img']) }}" onload="imgLook()" />
+        {% end for %}
+    </div>
+
+
+
+    <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('zoomifyc/zoomifyc.min.js') }}"></script>
+    <script src="{{static_url('js/script9_2.js')}}"> </script>
+</body>
+
+
+</html>
