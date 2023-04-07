@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .ui-datepicker-trigger {
+            margin-left: 5px;
+            position: relative;
+            top: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ static_url('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/jquery-ui-timepicker-addon.css') }}">
+
+    <script type="text/javascript" src="{{ static_url('js/1.12.4.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/1.12.1.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-timepicker-addon.js') }}"></script>
+
+    <script src="{{static_url('js/script10.js')}}"> </script>
+
+</head>
+
+<body>
+
+    <div class="ui-front">
+        <h3>Choose a date</h3>
+        <form>
+            <input type="text" id="date" value="" required autocomplete="off">
+            <!-- <button id="button1">choose</button> -->
+        </form>
+    </div>
+
+
+</body>
+
+</html>
