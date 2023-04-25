@@ -1,5 +1,8 @@
 """Example of datepicker (datetimepicker) 
 https://github.com/trentrichardson/jQuery-Timepicker-Addon
+
+input date and time and validation of it,
+example of jquery datetime input vidget
 """
 import asyncio
 from tornado import web, autoreload
@@ -17,8 +20,6 @@ settings = {
     "static_path": os.path.join(
         os.path.dirname(__file__), "static"
     ), 
-    "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
-    "login_url": "/login"
 }
 
 

@@ -2,24 +2,17 @@
 <html lang="en">
 
 <head>
-    <style>
-        .ui-datepicker-trigger {
-            margin-left: 5px;
-            position: relative;
-            top: 3px;
-            cursor: pointer;
-        }
-    </style>
     <link rel="stylesheet" href="{{ static_url('css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ static_url('css/jquery-ui-timepicker-addon.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/Mystyle.css') }}">
 
-    <script type="text/javascript" src="{{ static_url('js/1.12.4.js') }}"></script>
-    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
-    <script type="text/javascript" src="{{ static_url('js/1.12.1.js') }}"></script>
+    <script src="{{ static_url('js/jquery-ui-1.13.2/external/jquery/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2/dist/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2/ui/i18n/datepicker-ru.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2/ui/widgets/datepicker.js') }}"></script>
     <script type="text/javascript" src="{{ static_url('js/jquery-ui-timepicker-addon.js') }}"></script>
 
     <script src="{{static_url('js/script10.js')}}"> </script>
-
 </head>
 
 <body>
@@ -28,7 +21,7 @@
         <h3>Choose a date</h3>
         <form>
             <input type="text" id="date" value="" required autocomplete="off">
-            <!-- <button id="button1">choose</button> -->
+            <button id="button1" onClick="checkDate(event)">choose</button>
         </form>
     </div>
 
