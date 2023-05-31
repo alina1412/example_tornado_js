@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap-4.6.0-dist/css/bootstrap.min.css') }}">
+    <link href="{{ static_url('Magicsuggest-magicsuggest-2bd167c/magicsuggest.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ static_url('css/Mystyle.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
+
+    <script src="{{ static_url('Magicsuggest-magicsuggest-2bd167c/magicsuggest.js') }}"></script>
+
+    <script src="{{static_url('js/script12.js')}}"> </script>
+
+</head>
+
+<body>
+
+    <div>
+        <form id="myForm" style="margin: 20px;">
+            <div style="width: 140px;">
+                <select name='mul_select' id="my_select" class="custom-select" multiple>
+                    <option value="1" selected="selected">One OneOne</option>
+                    <option value="2">Two TwoTwo</option>
+                    <option value="3">Three ThreeThree</option>
+                    <option value="4">Four FourFour</option>
+                    <option value="5">Five FiveFive</option>
+                </select>
+            </div>
+
+            <button class='btn btn-outline-dark' id="btn" onClick="getFromForm(event)">Submit</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
