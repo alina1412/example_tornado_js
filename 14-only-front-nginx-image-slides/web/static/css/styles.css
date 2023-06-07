@@ -14,6 +14,18 @@ input, textarea {
     font-size: 12px;
 }
 
+
+.container {
+    display: grid; 
+    justify-content: center;
+}
+
+.plank {
+    width: 500px;
+    height: 160px;
+}
+
+
 .badge {
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
