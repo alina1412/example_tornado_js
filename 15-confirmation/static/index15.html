@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/Mystyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap-4.6.0-dist/css/bootstrap.min.css') }}">
+
+    <script type="text/javascript" src="{{ static_url('js/popper.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
+    <script src="{{ static_url('bootstrap-4.6.0-dist/js/bootstrap.min.js') }}"> </script>
+    
+    <script type="text/javascript" src="{{ static_url('bootstrap-4.6.0-dist/js/bootstrap-confirmation.min.js') }}"></script>
+    
+    
+    <script src="{{static_url('js/script15.js')}}"> </script>
+
+</head>
+
+<body>
+    
+    <div class="ui-front">
+        <h3>Type</h3>
+        <form>
+            <input type="text" name="message" id="message" value="None">
+            <button class="btn btn-success" id="button1" onClick="deleteIt(event, this)" 
+            data-toggle="confirmation" data-selected="{'login': 'login_val', 'air_at': 'when_val'}">
+            Delete</button>
+        </form>
+
+
+</body>
+
+</html>
