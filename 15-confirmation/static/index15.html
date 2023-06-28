@@ -25,7 +25,7 @@
         <form>
             <input type="text" name="message" id="message" value="None">
             <button class="btn btn-success" id="button1" onClick="deleteIt(event, this)" 
-            data-toggle="confirmation" data-selected="{'login': 'login_val', 'air_at': 'when_val'}">
+            data-toggle="confirmation" data-selected="{{ json_encode([{'login': 'by_whom1', 'when': 'when_val'}, {'login': 'by_whom2', 'when': 'when_val2'}]) }}">
             Delete</button>
         </form>
 

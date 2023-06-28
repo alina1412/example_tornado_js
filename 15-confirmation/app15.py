@@ -1,5 +1,6 @@
 """Example of bootstrap-confirmation with bootstrap 4, popper, js and jquery. 
-button with confirmation window for submit
+button with confirmation window for submit, 
+confirmation for button
 """
 import asyncio
 from tornado import web, autoreload
