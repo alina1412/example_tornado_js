@@ -14,6 +14,11 @@ class MainHandler(web.RequestHandler):
         num += 1    # only increase by manually reload, cause gets to post method
         self.render("./static/index3.html", num=num)
 
+    def post(self):
+        options = self.get_argument('options')
+        print('-', self.request.headers.get('Cookie'))
+        self.write(options)
+
 
 class MyFormHandler(web.RequestHandler):
     def post(self):
