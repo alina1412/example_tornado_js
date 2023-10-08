@@ -39,6 +39,11 @@ Each example in separate folder include: html, js, app.py
 
 11) Example of stylized checkbox, get form data from checkbox.
 
+12) Example of stylized multi-selector (multiple selector) - usage of magicsuggest.
+
+15) Example of button with confirmation window for submit. 
+
+16) Example of tornado and js websocket (echo)
 
 17) Example of testing tornado handlers. Testing arguments by using AsyncHTTPTestCase from tornado.testing.
 
