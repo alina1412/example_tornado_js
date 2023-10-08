@@ -33,3 +33,13 @@ Each example in separate folder include: html, js, app.py
 
 8) Example of testing tornado handlers. Get and post handlers. Pytest for tornado application. Mocking functions for testing a tornado app.
 
+9) Examples of showing images with js/jquery plugins.
+
+10) Example of datepicker (datetimepicker) in calendar on html page, tornado app.
+
+11) Example of stylized checkbox, get form data from checkbox.
+
+
+17) Example of testing tornado handlers. Testing arguments by using AsyncHTTPTestCase from tornado.testing.
+
+18) Example of js and jquery POST-requests.

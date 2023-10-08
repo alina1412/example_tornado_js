@@ -1,26 +1,27 @@
-"""Example of js and jquery POST-requests. (script12.js)
+"""Example of js and jquery POST-requests. (script18.js)
 Getting data from user and processing it in tornado web app.
 Tornado post requests, arguments from frontend,
 handling post-requests andn getting arguments from body in tornado example"""
 import asyncio
-from tornado import web, autoreload
+from tornado import web
+from urllib import parse
 import os
 import json
 
 
 class MainHandler(web.RequestHandler):
     def get(self):
-        self.render("./static/index12.html")
+        self.render("./static/index18.html")
 
 
 class MyFormHandler(web.RequestHandler):
-    def post(self, args=None):
+    def post(self):
         message = self.get_argument('message')
         print("data from argument 1: ", message)
          
 
 class MyFormHandler2(web.RequestHandler):
-    def post(self, args=None):
+    def post(self):
         data = json.loads(self.request.body)
         print("data from body json 2: ", data)
         try:
@@ -30,7 +31,7 @@ class MyFormHandler2(web.RequestHandler):
 
 
 class MyFormHandler3(web.RequestHandler):
-    def post(self, args=None):
+    def post(self):
         data = json.loads(self.request.body)
         print("data from body json 3: ", data)
         try:
@@ -40,12 +41,14 @@ class MyFormHandler3(web.RequestHandler):
 
 
 class MyFormHandler4(web.RequestHandler):
-    def post(self, args=None):
+    def post(self):
         options = self.get_argument('options')
         print("data from argument 4: ", options) 
         try:
             print(self.request.body, "loaded as bytes")
-            request_body_data = json.loads(self.request.body)
+            request_body_data = parse.unquote(self.request.body)
+            request_body_data = json.loads(request_body_data)
+            print(request_body_data)
         except Exception:
             print('request_body_data - not loaded as json') 
 
