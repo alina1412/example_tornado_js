@@ -41,6 +41,8 @@ Each example in separate folder include: html, js, app.py
 
 12) Example of stylized multi-selector (multiple selector) - usage of magicsuggest.
 
+14) Example of nginx docker container for static html (with modal and images)
+
 15) Example of button with confirmation window for submit. 
 
 16) Example of tornado and js websocket (echo)
