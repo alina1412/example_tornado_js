@@ -1,0 +1,23 @@
+<form id="myForm" class="row w-100 m-2 p-2">
+    {% set n = 1 %}
+    {% for key in filters %}
+    {% set filter = filters[key] %}
+
+    {% set fname = str(n) + 'select' %}
+    <div class='col-2'>
+
+        <select name='{{fname}}' id='{{fname}}' class="custom-select" multiple>
+            {% for select_opt in filter %}
+            <option value="{{select_opt['val']}}"    {{ selected="selected" if select_opt['had_chosen'] else '' }} >
+                {{select_opt['name']}}
+            </option>
+            
+            {% end for %}
+        </select>
+    </div>
+    {% set n = n + 1 %}
+    {% end for %}
+
+
+    <button class='btn btn-outline-dark' id="btn" onClick="renewFilters(event)">Submit</button>
+</form>
