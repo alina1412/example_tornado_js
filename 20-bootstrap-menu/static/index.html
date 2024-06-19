@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap-4.6.0-dist/css/bootstrap.min.css') }}">
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
+    <script src="{{ static_url('bootstrap-4.6.0-dist/js/popper.min.js') }}"> </script>
+    <script src="{{ static_url('bootstrap-4.6.0-dist/js/bootstrap.min.js') }}"> </script>
+
+    
+
+
+    <script src="{{ static_url('js/script.js') }}"> </script>
+    
+</head>
+
+<body>
+    <main class="container-fluid row mx-0 vh-100" style="background-color: blueviolet;">
+
+        <div class="row vw-100 vh-10" style="background-color: rgb(233, 136, 168); height: 10%;">
+            {% include 'menu.html' %}
+        </div>
+
+        <div class="row vw-100" style="height: 90%;">
+            <div class="col-md-2"
+                style="background-color: rgb(226, 244, 178); overflow: scroll; overflow-x: hidden; height: 100%;">
+                {% for day in [1, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 4, 5, 6, 2, 3, 4, 5, 6] %}
+                <div style="height: 50px;">{{day}}</div>
+                {% end %}
+            </div>
+            <div class="col-md-10" style="background-color: rgb(120, 207, 234); height: 100%;">
+                <div class="row" style="background-color: rgb(144, 246, 187); height: 15%; align-content: center;">
+                    <div style="width:100%; text-align: center;">1</div>
+                </div>
+                <div class="row"
+                    style="background-color: rgb(144, 170, 239); overflow: scroll; overflow-x: hidden; height: 85%;">
+                    <div class="col">
+                        {% for day in [1, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 4, 5, 6, 2, 3, 4, 5, 6] %}
+                        <div style="height: 50px;">{{day}}</div>
+                        {% end %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+
+
+</html>

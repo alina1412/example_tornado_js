@@ -1,0 +1,68 @@
+{% set sub_menu = [{'title': 'sublink1', 'action': '1'},
+                      {'title': 'sublink2', 'action': '2'}, 
+                      {'title': 'sublink3', 'action': '3'},
+                      
+                      ] %}
+
+{% set link_list = [
+                      {"title": 'link1', 'alias': 'search', 'url': '#'}, 
+                      {"title": 'link2', 'alias': 'picks', 'url': '#'},
+                      {"title": 'link3', 'alias': 'air', 'url': '#'}, 
+                      {"title": 'Sub-menu', 'alias': 'Sub-menu', 'url': '#', 'sublinks': sub_menu},
+                      ]  %}
+           
+
+<div class="vw-100" style="width:100%; text-align: center;">
+  <!-- dropdown with submenu on the last opt, needs bootsrtap.js and popper, and js script -->
+    <div class="col-md-2 dropdown ">
+        <a type="button" 
+        class="w-100 d-flex btn btn-secondary dropdown btn_source context-menu p-1 py-0" id="context" 
+           aria-controls="drop" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="w-100 h-100  align-self-center">
+            <!-- <i class="fa-solid fa-arrows-down-to-line"></i> -->
+            <span id="context_title">choose</span>
+            
+          </div>
+        </a>
+      
+    
+        <div class="dropdown-menu drop-cls" id="drop" aria-labelledby="dropdownMenuLink">
+          {% for link_group in link_list %}
+          
+            <div class="row w-100 p-0 m-0" id="heading{{link_group['title']}}">
+              <div class="d-inline col-11 p-0 m-0">
+                {% if link_group['alias'] != 'Sub-menu' %}
+                <a class="dropdown-item font-weight-bold context-item" href="{{link_group['url']}}"  data-id={{link_group['alias']}} >
+                    {{link_group['title']}}
+                </a>
+                {% else %}
+                
+                <a class="dropdown-item font-weight-bold context-item" id="sub-toggle" data-id={{link_group['alias']}}
+                  data-toggle="collapse" href="#" data-target="#collapseExample0" role="button"  aria-expanded="false" 
+                  aria-controls="collapseExample0">
+                  {{link_group['title']}}
+                </a>
+                {% end %}
+    
+                {% if 'sublinks' in link_group %}
+                <div class="p-0 m-0 w-100 collapse d-none" id="collapseExample0">
+                
+                    {% for sub_menu in link_group['sublinks'] %}
+                    <li class="btn-light drop pl-4 pt-1 pb-1 text-left font-14" onClick="">
+                      <span class="text-dark" > {{sub_menu['title']}} </span>
+                    </li>
+                    {% end for %}
+
+                </div>
+                {% end %}
+              </div>
+            </div>
+        
+          {% end %}
+    
+       
+    
+        </div>
+      </div>
+</div>
+
