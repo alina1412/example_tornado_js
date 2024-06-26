@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap-4.6.0-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('select_filters/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('select_filters/select2_custom.css')}}">
+    <link rel="stylesheet" href="{{ static_url('css/Mystyle.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery-ui-1.13.2.custom/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('select_filters/select2.min.js') }}"> </script>
+   
+
+    <script src="{{static_url('js/script.js')}}"> </script>
+
+</head>
+
+<body>
+
+    <div id="filters"> 
+        {% include 'part.html' %}
+    </div>
+
+
+</body>
+
+</html>
