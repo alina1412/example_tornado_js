@@ -108,3 +108,24 @@
 /* .bigdrop.select2-container .select2-results {max-height: 200px;}
 .bigdrop .select2-results {max-height: 200px;}
 .bigdrop .select2-choices {min-height: 150px; max-height: 150px; overflow-y: auto;} */
+
+.choices {
+  color: #888;
+  cursor: pointer;
+  /* display: inline-block; */
+  font-weight: bold;
+  /* margin-right: 2px; */
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 0 5px;
+}
+
+/* for not showing local selected boxes */
+/* .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  display: none;
+} */

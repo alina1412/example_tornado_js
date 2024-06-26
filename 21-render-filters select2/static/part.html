@@ -1,5 +1,20 @@
-
 <form id="myForm" class="row w-100 m-2 p-2">
+    <div class="row d-flex w-100 alert-secondary m-0 mb-2 p-1" style="min-height: 3rem;">
+        {% set n = 1 %}
+        {% for key in filters %}
+        {% set filter = filters[key] %}
+        {% set fname = str(n) + 'select' %}
+            {% for select_opt in filter %}
+            {% if select_opt['had_chosen'] %}
+            <div class='choices' data-name="{{fname}}">
+                 <button class="btn btn-sm btn-outline-secondary" type="button" onClick="">x</button> 
+                 {{select_opt['name']}} </div>   {% end %}
+            {% end for %}
+        {% set n = n + 1 %}
+        {% end for %}
+    </div>
+
+
     {% set n = 1 %}
     {% for key in filters %}
     {% set filter = filters[key] %}
