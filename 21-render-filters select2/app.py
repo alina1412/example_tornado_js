@@ -18,12 +18,14 @@ class MainHandler(web.RequestHandler):
                   
 
     def get(self):
-        self.render("./static/index.html", filters=self.FILTERS)
+        self.render("./static/index.html", filters=self.FILTERS, single_opt='')
 
     def post(self):
         options = self.get_argument('options')
         options = json.loads(options)
         print("data   : ", options) 
+        single_opt = options.get('single', tuple())
+        single_opt = single_opt if not single_opt else single_opt[0]
 
         for id, filter in self.FILTERS.items():
             selected = options.get(f"{id}select", tuple())
@@ -33,7 +35,7 @@ class MainHandler(web.RequestHandler):
                 opt['had_chosen'] = True if opt['val'] in selected else False
                
         print(self.FILTERS)
-        self.render("./static/part.html", filters=self.FILTERS)
+        self.render("./static/part.html", filters=self.FILTERS, single_opt=single_opt)
 
 
 settings = {

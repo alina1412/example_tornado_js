@@ -35,5 +35,15 @@
     {% end for %}
 
 
+    <div class='col-2'>
+        <!--multiple but single? -->
+        <select name='single' id='single' class="custom-select" >
+            <option value="v1"  {{selected="selected" if single_opt == "v1" else ''}}>v1</option>
+            <option value="v2"  {{selected="selected" if single_opt == "v2" else ''}}>v2</option>
+            <option value="v3"  {{selected="selected" if single_opt == "v3" else ''}}>v3</option>
+        </select>
+    </div>
+
+
     <button class='btn btn-outline-dark' id="btn" onClick="renewFilters()">Submit</button>
 </form>
