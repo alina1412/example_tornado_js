@@ -13,7 +13,8 @@ class MainHandler(web.RequestHandler):
     FILTERS =      {
         '1': [{'name': 'FRUITS', 'val': '1', 'had_chosen': None}, {'name': 'VEGETABLES', 'val': '2', 'had_chosen': None}],
             '2': [{'name': 'COOKED', 'val': '1', 'had_chosen': None}, {'name': 'FRESH', 'val': '2', 'had_chosen': None}],
-            '3': [{'name': "RED", 'val': '1', 'had_chosen': None}, {'name': "GREEN", 'val': '2', 'had_chosen': None}]
+            '3': [{'name': "RED", 'val': '1', 'had_chosen': None}, {'name': "GREEN", 'val': '2', 'had_chosen': None}],
+            '4': [{'name': "AAA", 'val': '1', 'had_chosen': None}, {'name': "BBB", 'val': '2', 'had_chosen': None}]
                                                                  }
                   
 

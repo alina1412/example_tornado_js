@@ -14,9 +14,10 @@
         {% end for %}
     </div>
 
-
+    <div class="row d-flex w-100 m-0 mb-2 p-1">
     {% set n = 1 %}
     {% for key in filters %}
+    {% if key != '4' %}
     {% set filter = filters[key] %}
 
     {% set fname = str(n) + 'select' %}
@@ -32,6 +33,7 @@
         </select>
     </div>
     {% set n = n + 1 %}
+    {% end %}
     {% end for %}
 
 
@@ -43,7 +45,21 @@
             <option value="v3"  {{selected="selected" if single_opt == "v3" else ''}}>v3</option>
         </select>
     </div>
+    </div>
 
+    <div class="row d-flex w-100 m-0 mb-2 p-1">
+        <div class='col-2'>
+
+            <select name='4select' id='4select' class="custom-select" multiple>
+                {% for select_opt in filters['4'] %}
+                <option value="{{select_opt['val']}}"    {{ selected="selected" if select_opt['had_chosen'] else '' }} >
+                    {{select_opt['name']}}
+                </option>
+                
+                {% end for %}
+            </select>
+        </div>
+    </div>
 
     <button class='btn btn-outline-dark' id="btn" onClick="renewFilters()">Submit</button>
 </form>
