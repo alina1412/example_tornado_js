@@ -1,0 +1,49 @@
+<form id="myForm" class="row w-100 p-2">
+    <div class="row d-flex w-100 alert-secondary m-0 mb-2 p-1" style="min-height: 3rem;">
+        {% set n = 1 %}
+        {% for key in filters %}
+        {% set filter = filters[key] %}
+        {% set fname = str(n) + 'select' %}
+            {% for select_opt in filter %}
+            {% if select_opt['had_chosen'] %}
+            <div class='choices' data-name="{{fname}}">
+                 <button class="btn btn-sm btn-outline-secondary" type="button" onClick="unselectFromFilterOpts(this)">x</button> 
+                 {{select_opt['name']}} </div>   {% end %}
+            {% end for %}
+        {% set n = n + 1 %}
+        {% end for %}
+    </div>
+
+
+    {% set n = 1 %}
+    {% for key in filters %}
+    {% set filter = filters[key] %}
+
+    {% set fname = str(n) + 'select' %}
+    <div class='col-2'>
+
+        <select name='{{fname}}' id='{{fname}}' class="custom-select" multiple>
+            {% for select_opt in filter %}
+            <option value="{{select_opt['val']}}"    {{ selected="selected" if select_opt['had_chosen'] else '' }} >
+                {{select_opt['name']}}
+            </option>
+            
+            {% end for %}
+        </select>
+    </div>
+    {% set n = n + 1 %}
+    {% end for %}
+
+
+    <div class='col-2'>
+        <!--multiple but single? -->
+        <select name='single' id='single' class="custom-select" >
+            <option value="v1"  {{selected="selected" if single_opt == "v1" else ''}}>v1</option>
+            <option value="v2"  {{selected="selected" if single_opt == "v2" else ''}}>v2</option>
+            <option value="v3"  {{selected="selected" if single_opt == "v3" else ''}}>v3</option>
+        </select>
+    </div>
+
+
+    <button class='btn btn-outline-dark' id="btn" onClick="renewFilters()">Submit</button>
+</form>

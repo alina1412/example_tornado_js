@@ -1,0 +1,69 @@
+.chosen-container-single .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0px!important;
+    height: auto!important;
+    border:none!important;
+    background-color:white!important;
+    background:none!important;
+    box-shadow:none!important;
+    -webkit-box-shadow:none!important;
+    /* padding: 0 0 0 8px; */
+    /* height: 25px; */
+    /* border: 1px solid #aaa; */
+    /* border-radius: 5px; */
+    /* background-color: #fff; */
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), color-stop(50%, #f6f6f6), color-stop(52%, #eee), to(#f4f4f4)); */
+    /* background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%); */
+    /* background-clip: padding-box; */
+    /* -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, .1); */
+    /* box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, .1); */
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 24px;
+}
+
+
+.chosen-container-single .chosen-drop {
+    margin-left: -12px!important;
+    border-color: lightgrey;
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background:none!important;
+    background-color: #829dbb!important;
+    /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+    background-image: linear-gradient(#3875d7 20%, #2a62bc 90%); */
+    color: #fff
+}
+
+.chosen-container-single .chosen-single span {
+    margin-right: 26px;
+    margin-top: -2px!important;
+}
+
+.chosen-container .chosen-results {
+    max-height: 24em;
+}
+
+
+.choices {
+    color: #888;
+    cursor: pointer;
+    background-color: #dadada;
+    /* display: inline-block; */
+    /* font-weight: bold; */
+    /* margin-right: 2px; */
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    cursor: default;
+    float: left;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 0 5px;
+    font-size: 0.75rem!important;
+  }
+  
