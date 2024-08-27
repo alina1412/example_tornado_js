@@ -1,3 +1,4 @@
+{% if part != 'list' %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +27,44 @@
     </div>
 
 
+    <div class="row w-50 pl-4" id="suggest_form">
+{% end %}
+{# if (part == '' or part == 'list' or not part) #}
+<style>
+    .select_opt {
+        cursor: pointer;
+
+    }
+    .select_opt:hover,
+    .select_opt.active {
+        background-color: #cdcdcd;
+    }
+
+</style>
+   
+    <div class="col-6 p-1">
+        <div class=" border-1" style="    border: #cdcdcd medium solid;">
+        <div class="w-100 ui-front">
+        <input type="text" class="form-control" placeholder="Не указано" id="select_custom" name="select_custom" data-id="" oninput="autocomplete_suggest('#select_custom');"
+                value="">
+        </div>
+        <div class="row w-100 p-0 m-0">
+            <ul class="w-100 scroll_div" style="height: 4em; overflow: auto;">
+                {% for elem in lst %}
+                <li class="select_opt pl-1 pr-1 text-break {{'active' if elem['chosen'] else '' }}" onClick="changeOpt(this);" data-id="{{elem['id']}}">
+                    {{elem['name']}}
+                </li>
+                {% end %}
+                
+            </ul>
+        </div>
+        </div>
+    </div>
+{# end #}
+{% if part != 'list' %}
+    </div>
+
 </body>
 
 </html>
+{% end %}

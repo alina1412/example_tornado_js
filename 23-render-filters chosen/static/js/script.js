@@ -5,6 +5,9 @@ $(document).ready(function () {
   globChoice = getFromForm();
   activateSuggest();
 
+  $("#select_custom").on('input', function() {
+    autocomplete_suggest("#select_custom");
+  });
 
 });
 
@@ -16,6 +19,9 @@ let showAlwaysOpen = function () {
   });
 }
 
+let changeOpts = function (btn) {
+  console.log('changed');
+}
 
 let activateSuggest = function () {
   let search_exist = true;
@@ -31,7 +37,7 @@ let activateSuggest = function () {
       });
     }
   }
-  // renewFilters();
+ 
 }
 
 let renewFilters = function () {
@@ -78,3 +84,65 @@ let getFromForm = function () {
   return rowsData
 }
 
+
+
+let loadSuggestsByInput = function (request, fieldName, response) {
+      let input_ = request.term;
+      var suggestUrl = "".concat('/suggest', '?query=', input_, 
+                              '&field=', fieldName.substring(1));//, 
+                              // '&region=', '1',
+                              // '&settlement_id=', '2');
+      $.ajax({
+        url: suggestUrl,
+        type: 'GET',
+        success: function (data) {
+          response(data);
+        }
+      })
+}
+
+
+// Отправка запроса о Suggest-подстановке
+let autocomplete_suggest = function(fieldName) {
+  console.log('autocomplete_suggest')
+  var input_ = "";
+  $(fieldName).autocomplete({
+    delay: 300,
+    minLength: 1,
+    source: function (request, response) { 
+      loadSuggestsByInput(request, fieldName, response);
+    },
+    select: function(event, ui) {
+      $(fieldName).attr('value' , ui.item.label);
+      $(fieldName).attr('data-id', ui.item.id);
+      $('#custom_select').val(ui.item.label)
+      // let elem = $("#region_select_m>.select_opt[data-val='" + ui.item.id + "']");
+      // $('#select_region').val(ui.item.label);
+      // if (elem.length > 0) {
+      //   elem[0].scrollIntoView()
+      //   elem.click();        
+      // }
+    }
+  });
+  $(fieldName).autocomplete( "option", "appendTo", ".ui-front" );
+}
+
+let changeOpt = function (btn) {
+  $(btn).addClass('active');
+  globChoice['suggest_form'] = $(btn).attr('data-id');
+  loadList();
+}
+
+
+let loadList = function () {
+  $.post({
+    url: '/suggest/',
+    data: JSON.stringify({ 'options': globChoice }),    // not stringified as a whole, but argument
+  })
+  .done(
+    function (result) {
+      console.log('loaded')
+      $('#suggest_form').html(result);
+     
+  })
+}

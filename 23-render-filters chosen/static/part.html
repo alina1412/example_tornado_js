@@ -23,7 +23,7 @@
     {% set fname = str(n) + 'select' %}
     <div class='col-2'>
 
-        <select name='{{fname}}' id='{{fname}}' class="custom-select" multiple>
+        <select name='{{fname}}' id='{{fname}}' class="custom-select" multiple onchange="changeOpts(this);">
             {% for select_opt in filter %}
             <option value="{{select_opt['val']}}"    {{ selected="selected" if select_opt['had_chosen'] else '' }} >
                 {{select_opt['name']}}
@@ -61,5 +61,5 @@
         </div>
     </div>
 
-    <button class='btn btn-outline-dark' id="btn" onClick="renewFilters()">Submit</button>
+    <button class='btn btn-outline-dark pl-4' id="btn" onClick="renewFilters()">Submit</button>
 </form>
